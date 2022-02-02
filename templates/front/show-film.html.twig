@@ -1,0 +1,28 @@
+{% extends "front/layout.html.twig"%}
+
+
+{% block title %}{% endblock %}
+
+
+{% block body %}
+
+
+<h1>{{film.titre}}</h1>
+
+<img src="{{asset ("img/affiche/" ~ film.affiche)}}" alt="{{film.titre}}" class="image">
+
+<p>{{ film.description }}</p>
+
+{# {{dump(film)}} #}
+<p> Réaliser par : <a href="{{path ("front_realisateur", {"id": film.realisateur.id })}}">{{film.realisateur}}</a></p> 
+
+{# ce lien pour editer un film ne s'affiche que si l'utilisateur est un admin #}
+
+{% if is_granted ("ROLE_ADMIN") %}
+<a href="{{path ("film_edit", {"id": film.id} )}}">Editer le film </a>
+{% endif %}    
+
+
+{% endblock %}
+
+

@@ -1,0 +1,10 @@
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        affiche_config:
+            uri_prefix: /img/affiche
+            upload_destination: '%kernel.project_dir%/public/img/affiche'
+        portrait_config:
+            uri_prefix: /img/portrait
+            upload_destination: '%kernel.project_dir%/public/img/portrait'

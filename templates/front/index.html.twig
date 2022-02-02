@@ -1,0 +1,19 @@
+{% extends 'front/layout.html.twig' %}
+
+{% block title %}IMDB!{% endblock %}
+
+{% block body %}
+
+<h1>TOUS LES FILMS</h1>
+
+{# {{dump(film)}} #}
+ {% for film in films %}
+
+
+    <a href="{{path ("front_film",{"id": film.id} ) }}"><img src="{{asset ("img/affiche/" ~ film.affiche )}}" alt="{{film.titre}}"></a>
+
+{% endfor %}
+
+
+
+{% endblock %}

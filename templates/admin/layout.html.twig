@@ -1,0 +1,17 @@
+{% extends "base.html.twig"%}
+
+{% block stylesheets %}
+   <link rel="stylesheet" href="{{ asset ("css/style-admin.css")}}">     
+           
+{% endblock %}
+
+{% block header %}
+<ul id="content">
+<li><a href="{{path ("film_index")}}">Gérer les films</a></li>
+<li><a href="{{path ("realisateur_index")}}">Gérer les realisateurs</a></li>
+<li><a href="{{path ("user_index")}}">Créer de nouveau user</a></li>
+
+<li><a href="{{path ("app_logout")}}">Déconnexion</a></li>
+</ul>
+{% endblock %}
+
